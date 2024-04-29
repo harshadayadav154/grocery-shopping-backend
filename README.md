@@ -8,9 +8,6 @@ Welcome to the Grocery Shopping Backend! This project serves as the backend serv
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup Instructions](#setup-instructions)
-- [API Documentation](#api-documentation)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
