@@ -3,35 +3,27 @@ const mongoose = require("mongoose");
 // Define the schema for the Order model
 const orderSchema = new mongoose.Schema({
   user: {
-    username: { type: String, required: true },
-    email: { type: String, required: true },
-  },
-  items: [
-    {
-      product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Product",
-        required: true,
-      },
-      quantity: {
-        type: Number,
-        required: true,
-      },
+    type: {
+      username: { type: String, required: true },
+      email: { type: String, required: true },
     },
-  ],
-  totalPrice: {
-    type: Number,
     required: true,
   },
-  shippingAddress: {
-    type: String,
+  shippingAddress: { type: String, required: true },
+  items: {
+    type: Map,
+    of: {
+      name: { type: String, required: true },
+      price: { type: Number, required: true },
+      unit: { type: String, required: true },
+      images: { type: String, required: true },
+      quantity: { type: Number, required: true },
+    },
     required: true,
   },
-  // Add more fields as needed
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+  totalPrice: { type: Number, required: true },
+  totalWithShipping: { type: Number, required: true },
+  createdAt: { type: Date, default: Date.now },
 });
 
 // Create the Order model from the schema
